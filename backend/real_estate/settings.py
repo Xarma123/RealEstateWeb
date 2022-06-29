@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'realtors',
     'listings',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +86,12 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testdjango18@gmail.com'
+EMAIL_HOST_PASSWORD = 'lwwbkiphowdkicij'
+EMAIL_USE_TLS = True
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

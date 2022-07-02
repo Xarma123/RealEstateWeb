@@ -8,17 +8,17 @@ import {
   LOGOUT,
 } from "./types";
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (email, password) => async dispatch => {
   const config = {
     headers: {
-      "Content-Type": "application/json",
-    },
+      'Content-Type': 'application/json'
+    }
   };
   const body = JSON.stringify({ email, password });
 
   try {
     const res = await axios.post(
-      "https://localhost:8000/api/token/",
+      "http://localhost:8000/api/token/",
       body,
       config
     );
@@ -37,16 +37,16 @@ export const login = (email, password) => async (dispatch) => {
 };
 export const signup =
   ({ name, email, password, password2 }) =>
-  async (dispatch) => {
+  async dispatch => {
     const config = {
       headers: {
-        "Content-Type": "application/json",
-      },
+        "Content-Type": "application/json"
+      }
     };
     const body = JSON.stringify({ name, email, password, password2 });
     try {
       const res = await axios.post(
-        "https://localhost:8000/api/accounts/signup",
+        "http://localhost:8000/api/accounts/signup",
         body,
         config
       );
@@ -55,7 +55,7 @@ export const signup =
         type: SIGNUP_SUCCESS,
         payload: res.data,
       });
-      dispatch(setAlert(login(email, password)));
+      dispatch(login(email, password));
     } catch (err) {
       dispatch({
         type: SIGNUP_FAIL,
@@ -64,7 +64,7 @@ export const signup =
     }
   };
 
-export const logout = () => {
+export const logout = () => dispatch => {
   dispatch(setAlert("logout success", "success"));
   dispatch({ type: LOGOUT });
 };

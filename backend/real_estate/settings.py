@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'realtors',
     'listings',
     'contacts',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

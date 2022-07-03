@@ -4,7 +4,8 @@ import ListingForm from "../components/ListingForm";
 import Listings from "../components/Listings";
 import Pagination from "../components/Pagination";
 
-function Home() {
+function Home() { 
+  
   const [listings, setListings] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [listingsPerPage, setListingsPerPage] = useState(3);
@@ -42,7 +43,27 @@ function Home() {
         <title>Realest Estate - Home</title>
         <meta name="description" content="Realest Estate Home Page" />
       </Helmet>
-      
+      <section className="home__form">
+        <ListingForm setListings={setListings} />
+      </section>
+      <section className="home__listings">
+        <Listings listings={currentListings} />
+      </section>
+      <section className="home__pagination">
+        <div className="row">
+          {listings.length !== 0 ? (
+            <Pagination
+              itemsPerPage={listingsPerPage}
+              count={listings.length}
+              visitPage={visitPage}
+              previous={previous_number}
+              next={next_number}
+              active={active}
+              setActive={setActive}
+            />
+          ) : null}
+        </div>
+      </section>
     </main>
   );
 }

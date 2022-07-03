@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ListingView, ListingsView, SearchView
+from .views import ListingsView, ListingView, SearchView
 
 urlpatterns = [
     path('', ListingsView.as_view()),

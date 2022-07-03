@@ -18,7 +18,7 @@ export const login = (email, password) => async dispatch => {
 
   try {
     const res = await axios.post(
-      "https://realestate123.pythonanywhere.com/api/token/",
+      "https://realestates.pythonanywhere.com/api/token/",
       body,
       config
     );
@@ -46,7 +46,7 @@ export const signup =
     const body = JSON.stringify({ name, email, password, password2 });
     try {
       const res = await axios.post(
-        "https://realestate123.pythonanywhere.com/api/accounts/signup",
+        "https://realestates.pythonanywhere.com/api/accounts/signup",
         body,
         config
       );

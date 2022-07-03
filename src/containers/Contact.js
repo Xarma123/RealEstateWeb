@@ -37,7 +37,7 @@ const Contact = ({ setAlert }) => {
     setLoading(true);
     axios
       .post(
-        'https://realestate123.pythonanywhere.com/api/contacts/',
+        'https://realestates.pythonanywhere.com/api/contacts/',
         { name, email, subject, message },
         config
       )

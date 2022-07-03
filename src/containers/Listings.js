@@ -16,7 +16,7 @@ const Listings = () => {
 
         const fetchData = async () => {
             try {                            
-                const res = await axios.get('https://realestate123.pythonanywhere.com/api/listings/?page=1');
+                const res = await axios.get('https://realestates.pythonanywhere.com/api/listings/?page=1');
                                           
                 setListings(res.data.results);
                 setCount(res.data.count);
@@ -74,7 +74,7 @@ const Listings = () => {
     };
 
     const visitPage = (page) => {
-        axios.get(`https://realestate123.pythonanywhere.com/api/listings/?page=${page}`)
+        axios.get(`https://realestates.pythonanywhere.com/api/listings/?page=${page}`)
         .then(res => {
             setListings(res.data.results);
             setPrevious(res.data.previous);

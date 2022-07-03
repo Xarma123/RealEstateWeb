@@ -16,7 +16,7 @@ const About = () => {
 
         const getTopSeller = async () => {
             try {
-                const res = await axios.get('https://realestate123.pythonanywhere.com/api/realtors/topseller', config);
+                const res = await axios.get('https://realestates.pythonanywhere.com/api/realtors/topseller', config);
                 setTopSeller(res.data);
             }
             catch (err) {

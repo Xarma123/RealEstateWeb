@@ -32,7 +32,7 @@ const ListingForm = (props) => {
         };
 
         setLoading(true);
-        axios.post('http://localhost:8000/api/listings/search', { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
+        axios.post('https://realestate123.pythonanywhere.com/api/listings/search', { sale_type, price, bedrooms, home_type, bathrooms, sqft, days_listed, has_photos, open_house, keywords }, config)
         .then(res => {
             setLoading(false);
             props.setListings(res.data);

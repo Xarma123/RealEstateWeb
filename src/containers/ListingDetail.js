@@ -24,7 +24,7 @@ function ListingDetail(props) {
             }
         };
         
-        axios.get(`http://localhost:8000/api/listings/${slug}`, config)
+        axios.get(`https://realestate123.pythonanywhere.com/api/listings/${slug}`, config)
         .then(res => { 
          
             setListing(res.data);
@@ -46,7 +46,7 @@ function ListingDetail(props) {
         };
 
         if (id) {
-            axios.get(`http://localhost:8000/api/realtors/${id}`, config)
+            axios.get(`https://realestate123.pythonanywhere.com/api/realtors/${id}`, config)
             .then(res => {
                 setRealtor(res.data);
             })

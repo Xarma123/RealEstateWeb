@@ -36,7 +36,7 @@ const About = () => {
 
         const getRealtors = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/api/realtors/', config);
+                const res = await axios.get('https://realestates.pythonanywhere.com/api/realtors/', config);
                 setRealtors(res.data);
             }
             catch (err) {
